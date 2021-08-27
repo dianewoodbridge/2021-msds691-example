@@ -1,0 +1,118 @@
+site_id,site_name,site_latitude,site_longitude,county,state
+60090001,San Andreas-Gold Strike Road,38.20185,-120.680275,Calaveras,California
+60111002,Colusa-Sunrise Blvd,39.18919,-121.99887,Colusa,California
+60170011,South Lake Tahoe-Sandy Way,38.94498,-119.97061,El Dorado,California
+60190007,Fresno-Drummond,36.705475,-119.74133,Fresno,California
+60190011,Fresno - Garland,36.78538,-119.77321,Fresno,California
+60190500,Table Mountain Air Monitoring Site,36.98512,-119.65834,Fresno,California
+60195001,Clovis-Villa,36.81945,-119.71643,Fresno,California
+60210003,Willows-Colusa Street,39.53387,-122.190834,Glenn,California
+60231004,Jacobs,40.77678,-124.17949,Humboldt,California
+60250005,Calexico-Ethel Street,32.67618,-115.48307,Imperial,California
+60250007,Brawley-220 Main Street,32.97833,-115.53917,Imperial,California
+60251003,El Centro-9th Street,32.79222,-115.56306,Imperial,California
+60254003,Westmorland,33.0325,-115.62361,Imperial,California
+60254004,Niland-English Road,33.21361,-115.54528,Imperial,California
+60270002,White Mountain Research Center - Owens Valley Lab,37.360683,-118.33078,Inyo,California
+60270004,Lone Pine PM,36.609,-118.05781,Inyo,California
+60270022,Dirty Socks,36.32617,-117.95512,Inyo,California
+60270023,Olancha-Well 404,36.280598,-118.01166,Inyo,California
+60270025,Shell Cut,36.366318,-117.897606,Inyo,California
+60270026,Bill Stanley,36.36193,-118.01068,Inyo,California
+60270028,Lizard Tail,36.54314,-117.941826,Inyo,California
+60270029,North Beach,36.54223,-117.99007,Inyo,California
+60270030,Mill Site,36.458103,-117.85189,Inyo,California
+60271001,Coso Junction,36.0494,-117.943924,Inyo,California
+60271003,Keeler,36.487823,-117.87103,Inyo,California
+60271018,Lone Pine Paiute-Shoshone Reservation,36.595554,-118.049164,Inyo,California
+60271023,Bishop Tribe EMO,37.362137,-118.41748,Inyo,California
+60271028,Fort Independence Indian Community,36.834957,-118.22668,Inyo,California
+60290010,Bakersfield-Golden/M St,35.385574,-119.01501,Kern,California
+60290011,Mojave,35.050552,-118.14729,Kern,California
+60290014,Bakersfield-California,35.356613,-119.062614,Kern,California
+60290017,Canebrake,35.72771,-118.13774,Kern,California
+60290018,Ridgecrest-Ward,35.642944,-117.715065,Kern,California
+60290232,Oildale,35.438034,-119.016785,Kern,California
+60310004,Corcoran-Patterson,36.102245,-119.56565,Kings,California
+60310500,Santa Rosa Rancheria,36.233273,-119.76621,Kings,California
+60311004,Hanford-Irwin,36.31567,-119.64345,Kings,California
+60333002,Lakeport-S. Main Street,39.01893,-122.91333,Lake,California
+60333010,ANDERSON SPRINGS,38.77453,-122.6995,Lake,California
+60333011,GLENBROOK,38.84846,-122.75797,Lake,California
+60370002,Azusa,34.1365,-117.92391,Los Angeles,California
+60370016,Glendora,34.14435,-117.85036,Los Angeles,California
+60371103,Los Angeles-North Main Street,34.06659,-118.22688,Los Angeles,California
+60374004,Long Beach (South),33.79236,-118.17533,Los Angeles,California
+60374006,Long Beach (Hudson),33.8025,-118.22,Los Angeles,California
+60375005,LAX Hastings,33.95507,-118.43049,Los Angeles,California
+60376012,Santa Clarita,34.38344,-118.5284,Los Angeles,California
+60379033,Lancaster-Division Street,34.66974,-118.13051,Los Angeles,California
+60392010,Madera-City,36.953255,-120.0342,Madera,California
+60431001,Yosemite NP-Yosemite Village Vistor Center,37.748707,-119.5871,Mariposa,California
+60450010,Fort Bragg-300 Dana Street,39.43734,-123.78766,Mendocino,California
+60472510,Merced-M Street,37.30832,-120.48045,Merced,California
+60510001,Mammoth,37.64571,-118.96652,Mono,California
+60510005,Lee Vining,37.96207,-119.12028,Mono,California
+60510011,Mono Shore,38.06971,-118.94774,Mono,California
+60530008,King City 2,36.209286,-121.12637,Monterey,California
+60590007,Anaheim,33.83062,-117.93845,Orange,California
+60592022,Mission Viejo,33.63003,-117.67593,Orange,California
+60610006,Roseville-N Sunrise Ave,38.74643,-121.26498,Placer,California
+60650003,Norco,33.92145,-117.57244,Riverside,California
+60650012,Banning Airport,33.92086,-116.85841,Riverside,California
+60650500,29 Palms,33.71969,-116.1897,Riverside,California
+60651999,Torres Martinez Administration Site,33.56125,-116.15338,Riverside,California
+60652002,Indio,33.70853,-116.21537,Riverside,California
+60652005,Mecca (Saul Martinez),33.572018,-116.06382,Riverside,California
+60655001,Palm Springs,33.85275,-116.54101,Riverside,California
+60656001,Perris,33.78942,-117.22764,Riverside,California
+60658001,Rubidoux,33.99958,-117.41601,Riverside,California
+60658005,Mira Loma (Van Buren),33.99636,-117.4924,Riverside,California
+60659001,Lake Elsinore,33.67649,-117.33098,Riverside,California
+60670002,North Highlands-Blackfoot,38.71209,-121.38109,Sacramento,California
+60670006,Sacramento-Del Paso Manor,38.613777,-121.36801,Sacramento,California
+60670010,Sacramento-1309 T Street,38.56844,-121.49311,Sacramento,California
+60670284,Sacramento-Branch Center #2,38.551388,-121.33666,Sacramento,California
+60690002,Hollister,36.843426,-121.3621,San Benito,California
+60710001,Barstow,34.89398,-117.0248,San Bernardino,California
+60710005,Crestline,34.2431,-117.27235,San Bernardino,California
+60710306,Victorville-Park Avenue,34.51096,-117.32554,San Bernardino,California
+60711004,Upland,34.10374,-117.62914,San Bernardino,California
+60711234,Trona - Athol/Telescope #2,35.77417,-117.3714,San Bernardino,California
+60712002,Fontana,34.10002,-117.49201,San Bernardino,California
+60714001,Hesperia-Olive Street,34.41639,-117.2858,San Bernardino,California
+60714003,Redlands,34.05977,-117.14731,San Bernardino,California
+60719004,San Bernardino,34.106678,-117.27406,San Bernardino,California
+60730001,Chula Vista,32.63124,-117.05909,San Diego,California
+60731014,Donovan,32.57816,-116.92135,San Diego,California
+60731022,El Cajon - Lexington Elementary School,32.789566,-116.944305,San Diego,California
+60771002,Stockton-Hazelton,37.95074,-121.268524,San Joaquin,California
+60772010,Manteca,37.793392,-121.24787,San Joaquin,California
+60773005,Tracy-Airport,37.682636,-121.4425,San Joaquin,California
+60790005,Paso Robles,35.61467,-120.65691,San Luis Obispo,California
+60792004,Mesa2,35.02083,-120.56388,San Luis Obispo,California
+60792006,San Luis Obispo,35.25651,-120.6693,San Luis Obispo,California
+60792007,Arroyo Grande CDF,35.04673,-120.58777,San Luis Obispo,California
+60794002,Nipomo Regional Park (NRP),35.03146,-120.50103,San Luis Obispo,California
+60798002,Atascadero,35.49453,-120.66617,San Luis Obispo,California
+60799001,Oso Flaco Site,35.00876,-120.59998,San Luis Obispo,California
+60830011,Santa Barbara,34.427776,-119.691216,Santa Barbara,California
+60831008,Santa Maria,34.94287,-120.43561,Santa Barbara,California
+60831025,Los Flores Canyon #1,34.48974,-120.04692,Santa Barbara,California
+60832004,Lompoc H Street,34.63782,-120.4575,Santa Barbara,California
+60832011,Goleta,34.44551,-119.8284,Santa Barbara,California
+60890004,Redding - Health Department,40.55013,-122.38092,Shasta,California
+60890007,Anderson - North Street,40.45291,-122.29887,Shasta,California
+60890008,Shasta Lake-La Mesa,40.67707,-122.37429,Shasta,California
+60970001,Cloverdale,38.804268,-123.01814,Sonoma,California
+60970002,Healdsburg-Matheson,38.610905,-122.8688,Sonoma,California
+60973002,Guerneville-Church and 1st,38.501114,-122.998184,Sonoma,California
+60990005,Modesto-14th Street,37.642166,-120.99421,Stanislaus,California
+60990006,Turlock,37.488316,-120.836006,Stanislaus,California
+61010003,Yuba City,39.13877,-121.618546,Sutter,California
+61030007,Red Bluff-Walnut St. District Office,40.17093,-122.25556,Tehama,California
+61072002,Visalia-Church,36.33218,-119.29123,Tulare,California
+61112002,Simi Valley-Cochran Street,34.276318,-118.683685,Ventura,California
+61113001,El Rio-Rio Mesa School #2,34.25239,-119.14318,Ventura,California
+61131003,Woodland-Gibson Road,38.66121,-121.73269,Yolo,California
+61132001,West Sacramento-15th Street,38.57146,-121.52579,Yolo,California
