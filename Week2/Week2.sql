@@ -160,7 +160,10 @@ SELECT LENGTH('xyz'),
 SELECT 'MSDS691' LIKE 'MSDS%', 
 	   'MSDS691' SIMILAR TO 'MSDS%',
 	   'MSDS691' LIKE 'MSDS[0-9]+',
-	   'MSDS691' SIMILAR TO 'MSDS[0-9]+'
+	   'MSDS691' SIMILAR TO 'MSDS[0-9]+',
+	   'MSDS691' SIMILAR TO '[a-z,0-9]+',
+	   'MSDS691' SIMILAR TO '[A-Z,0-9]+',
+	   'MSDS691' SIMILAR TO '[A-Z,a-z,0-9]+';
 	   
 	   
 --------------------------------------------------------
