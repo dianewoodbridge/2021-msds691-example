@@ -24,7 +24,7 @@ SELECT aws_commons.create_s3_uri(
 SELECT aws_s3.table_import_from_s3(
    'epa_air_quality', 'date,site_id,daily_mean_pm10_concentration, daily_aqi_value', '(FORMAT csv, HEADER true)',
    aws_commons.create_s3_uri('usfca-msds691', 'epa_air_quality.csv','us-west-1'),
-   aws_commons.create_aws_credentials('AKIAVOINCV3GWLBLUDPC','jD41X0JNup9D7GTd7i7DO7+WFkMfMiZj9sxqH+KU','')
+   aws_commons.create_aws_credentials('USE_YOUR_OWN_ACCESS_KEY','USE_YOUR_OWN_SECERT_KEY','')
 
 );
 
