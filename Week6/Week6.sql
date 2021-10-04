@@ -1,8 +1,8 @@
 -----------------------------
 -- Drop, create and load data
 ------------------------------
-DROP TABLE IF EXISTS epa_air_quality;
-DROP TABLE IF EXISTS epa_site_location;
+DROP TABLE IF EXISTS epa_air_quality CASCADE;
+DROP TABLE IF EXISTS epa_site_location CASCADE;
 
 CREATE TABLE epa_site_location
 (
@@ -106,35 +106,111 @@ SELECT * FROM epa_air_quality;
 --Ex 4. 
 ----Query tool 1 (start first)
 --Write a transaction for epa_air_quality that
--- A. Return the number of records for site_id = 60070008.
+-- A. Return the number of records for site_id = 60070008 daily_aqi_value > 20.
 -- B. Wait for 10 seconds 
-----  SELECT pg_sleep(seconds)
--- C. Delete rows where site_id = 60070008.
--- D. Return the number of records for site_id = 60070008.
+---- SELECT pg_sleep(seconds)
+-- C. Update daily_aqi_value to 19 WHERE site_id = 60070008 AND date = '2020-01-01';
+-- D. Repeat the step A.
 -- E. What happens if you commit?
--- F. Return the number of records for site_id = 60070008.
+-- F. Repeat the step A.
+
 BEGIN;
-SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008; -- 170 
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 57 
 SELECT pg_sleep(10);
-DELETE FROM epa_air_quality WHERE site_id = 60070008; 
-SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008; -- 0
+--DELETE FROM epa_air_quality WHERE site_id = 60070008; 
+UPDATE epa_air_quality SET daily_aqi_value = 19 WHERE site_id = 60070008 AND date = '2020-01-01'; 
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
 COMMIT;
-SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008; -- 0
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
 
 ---- Query tool 2 (start right after the first one)
 -- Write a transaction for epa_air_quality that
--- Return the number of records for site_id = 60070008.
--- A. Wait for 10 seconds 
+-- A. Return the number of records for site_id = 60070008 daily_aqi_value > 20.
+-- B. Wait for 10 seconds 
 ---- SELECT pg_sleep(seconds)
--- B. INSERT INTO epa_air_quality VALUES (“2020-01-17",	60070008, 7, 6);
--- C. Return the number of records for site_id = 60070008.
+-- C. Repeat the step A.
 -- D. What happens if you commit?
--- E. Return the number of records for site_id = 60070008.
+-- E. Repeat the step A.
 BEGIN;
-SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008; -- 170
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; --57
 SELECT pg_sleep(10);
-INSERT INTO epa_air_quality VALUES (“2020-01-17",	60070008, 7, 6);
-SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008; -- 171
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; --56
 COMMIT;
-SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008; -- 1
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; --56
 
+--Ex 5. BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ for Ex4. 
+----Query tool 1 (start first)
+--Write a transaction for epa_air_quality that
+-- A. Return the number of records for site_id = 60070008 daily_aqi_value > 20.
+-- B. Wait for 10 seconds 
+---- SELECT pg_sleep(seconds)
+-- C. Update daily_aqi_value to 19 WHERE site_id = 60070008 AND date = '2020-01-01';
+-- D. Repeat the step A.
+-- E. What happens if you commit?
+-- F. Repeat the step A.
+
+-- Change to the original value.
+UPDATE epa_air_quality SET daily_aqi_value = 25 WHERE site_id = 60070008 AND date = '2020-01-01'; 
+
+BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 57 
+SELECT pg_sleep(10);
+UPDATE epa_air_quality SET daily_aqi_value = 19 WHERE site_id = 60070008 AND date = '2020-01-01'; 
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
+COMMIT;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
+
+---- Query tool 2 (start right after the first one)
+-- Write a transaction for epa_air_quality that
+-- A. Return the number of records for site_id = 60070008 daily_aqi_value > 20.
+-- B. Wait for 10 seconds 
+---- SELECT pg_sleep(seconds)
+-- C. Repeat the step A.
+-- D. What happens if you commit?
+-- E. Repeat the step A.
+BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 57
+SELECT pg_sleep(10);
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 57
+COMMIT;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
+
+
+--Ex 6. BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE for Ex4. 
+----Query tool 1 (start first)
+--Write a transaction for epa_air_quality that
+-- A. Return the number of records for site_id = 60070008 daily_aqi_value > 20.
+-- B. Wait for 10 seconds 
+---- SELECT pg_sleep(seconds)
+-- C. Update daily_aqi_value to 19 WHERE site_id = 60070008 AND date = '2020-01-01';
+-- D. Repeat the step A.
+-- E. What happens if you commit?
+-- F. Repeat the step A.
+
+-- Change to the original value.
+UPDATE epa_air_quality SET daily_aqi_value = 25 WHERE site_id = 60070008 AND date = '2020-01-01'; 
+
+BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; --  57
+SELECT pg_sleep(10);
+UPDATE epa_air_quality SET daily_aqi_value = 19 WHERE site_id = 60070008 AND date = '2020-01-01';  
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
+COMMIT;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
+
+---- Query tool 2 (start right after the first one)
+-- Write a transaction for epa_air_quality that
+-- A. Return the number of records for site_id = 60070008 daily_aqi_value > 20.
+-- B. Wait for 10 seconds 
+---- SELECT pg_sleep(seconds)
+-- C. Update daily_aqi_value to 24 WHERE site_id = 60070008 AND date = '2020-01-01';
+-- D. Repeat the step A.
+-- E. What happens if you commit?
+-- F. Repeat the step A.
+BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 57
+SELECT pg_sleep(10);
+UPDATE epa_air_quality SET daily_aqi_value = 24 WHERE site_id = 60070008 AND date = '2020-01-01'; --ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- ERROR:  current transaction is aborted, commands ignored until end of transaction block
+COMMIT;
+SELECT COUNT(*) FROM epa_air_quality WHERE site_id = 60070008 AND daily_aqi_value > 20; -- 56
