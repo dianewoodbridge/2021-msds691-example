@@ -276,6 +276,17 @@ ALTER TABLE county_cbsa ADD PRIMARY KEY (county_code);
 ALTER TABLE county_cbsa ADD CONSTRAINT county_cbsa_county_code_foreign_key FOREIGN KEY (county_code) REFERENCES county(county_code) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE county_cbsa ADD CONSTRAINT county_cbsa_cbsa_code_foreign_key FOREIGN KEY (cbsa_code) REFERENCES cbsa(cbsa_code) ON UPDATE CASCADE ON DELETE CASCADE;
 
+--To alter tables, we need to drop the view as the view is dependant on original columns.
+DROP VIEW epa_air_quality_2nf_joined;
+
+ALTER TABLE epa_site_location
+DROP COLUMN site_latitude, 
+DROP COLUMN site_longitude, 
+DROP COLUMN county_code, 
+DROP COLUMN county, 
+DROP COLUMN cbsa_code, 
+DROP COLUMN cbsa_name;
+
 COMMIT;
 
 
